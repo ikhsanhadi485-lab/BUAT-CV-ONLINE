@@ -1,0 +1,501 @@
+:root{--green:#17493f;--green-dark:#103a32;--green-mid:#dcebd9;--green-soft:#f0f6ef;--text:#1f302b;--muted:#73827b;--line:#e2eae5;--surface:#fff;--bg:#f5f8f6;--shadow:0 14px 38px rgba(27,58,46,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px}.topbar{height:74px;padding:0 max(4vw,24px);display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none}.brand-mark{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:var(--green);color:#fff;font:700 23px 'Yu Mincho',serif}.brand-name{display:flex;flex-direction:column;gap:2px}.brand-name strong{font:800 14px 'Plus Jakarta Sans',sans-serif}.brand-name small{font-size:8px;letter-spacing:1.4px;color:#8b9a92}.topbar-actions{display:flex;align-items:center;gap:22px}.privacy{display:inline-flex;align-items:center;gap:8px;color:#668075;font-size:10px}.privacy i,.live-pill i{width:7px;height:7px;border-radius:50%;background:#4aa47a;display:inline-block}.guide-link{font-size:11px;color:var(--green);font-weight:700;text-decoration:none}.page{width:min(1440px,92vw);margin:auto;padding:40px 0 20px}.hero{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:34px}.eyebrow{margin:0 0 10px;color:#739183;font-size:9px;font-weight:800;letter-spacing:2px}.hero h1{max-width:760px;margin:0;font:800 clamp(27px,3.4vw,42px)/1.15 'Plus Jakarta Sans',sans-serif;letter-spacing:-1.4px;color:#183b33}.hero-description{max-width:790px;margin:14px 0 18px;color:#71817a;font-size:13px;line-height:1.7}.hero-points{display:flex;flex-wrap:wrap;gap:18px;color:#65776e;font-size:10px}.hero-points span{display:flex;align-items:center;gap:7px}.hero-points b{color:var(--green);font-size:9px}.hero-mark{width:114px;height:114px;flex:0 0 auto;border:1px solid #cbded1;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#fff,#edf5ee);color:var(--green)}.hero-mark strong{font:700 24px 'Yu Mincho',serif;letter-spacing:2px}.hero-mark small{margin-top:7px;text-align:center;font-size:7px;letter-spacing:2px;line-height:1.5;color:#7c9a88}.main-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(400px,.92fr);gap:27px;align-items:start}.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.step{font-size:8px;font-weight:800;letter-spacing:1.5px;color:#789386}.section-title h2{margin:5px 0 0;font:800 22px 'Plus Jakarta Sans',sans-serif;letter-spacing:-.5px}.required-info{font-size:9px;color:#89978f}.required-info i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#d18b52;margin-right:5px;vertical-align:1px}.form-card{margin-bottom:15px;padding:22px 23px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 17px rgba(26,59,45,.035)}.card-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}.card-symbol{width:38px;height:38px;flex:0 0 auto;display:grid;place-items:center;border-radius:10px;background:#edf5ee;color:var(--green);font:700 17px 'Yu Mincho',serif}.card-title h3{margin:0;font:800 13px 'Plus Jakarta Sans',sans-serif}.card-title p{margin:4px 0 0;color:#89968f;font-size:9px;line-height:1.45}.fields{display:grid;gap:14px 15px}.fields.two{grid-template-columns:repeat(2,minmax(0,1fr))}.field{min-width:0;display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label,.repeat-field label{font-size:10px;font-weight:700;color:#495d53}.field label em{font-style:normal;color:#ca7650}.field input,.field select,.field textarea,.repeat-field input,.repeat-field select,.repeat-field textarea{width:100%;min-width:0;border:1px solid #dce6df;border-radius:8px;background:#fff;color:#263b32;font:500 11px 'DM Sans',sans-serif;outline:none;transition:border-color .15s,box-shadow .15s}.field input,.field select,.repeat-field input,.repeat-field select{height:39px;padding:0 11px}.field textarea,.repeat-field textarea{min-height:65px;padding:10px 11px;resize:vertical;line-height:1.5}.field input:focus,.field select:focus,.field textarea:focus,.repeat-field input:focus,.repeat-field select:focus,.repeat-field textarea:focus{border-color:#6e9f83;box-shadow:0 0 0 3px rgba(76,139,102,.1)}input:disabled{background:#f4f6f4!important;color:#9ba6a0!important;cursor:not-allowed}.hint{font-size:8px;color:#8a9991;line-height:1.45}.label-line{display:flex;align-items:center;justify-content:space-between;gap:8px}.link-button{border:0;padding:0;background:none;color:#3c8063;font-size:9px;font-weight:700;cursor:pointer}.link-button:hover{text-decoration:underline}.calculated-value{height:39px;display:flex;align-items:center;gap:5px;padding:0 11px;border:1px solid #e1e9e3;border-radius:8px;background:#f5f8f5}.calculated-value strong{font-size:12px;color:var(--green)}.calculated-value span{color:#708178;font-size:9px}.calculated-value small{margin-left:auto;color:#9aa69f;font-size:8px}.photo-row{display:flex;align-items:center;gap:17px;padding:13px;border:1px dashed #cbdcd0;border-radius:10px;background:#f9fbf9}.photo-preview{width:78px;height:104px;flex:0 0 auto;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;border:1px solid #cbd8ce;background:#edf3ed;color:#779081}.photo-preview span{font:700 17px 'Yu Mincho',serif}.photo-preview small{margin-top:6px;font-size:8px}.photo-preview img{width:100%;height:100%;object-fit:cover}.photo-actions p{max-width:340px;margin:8px 0;color:#84938a;font-size:9px;line-height:1.5}.upload-button{display:inline-flex;height:34px;align-items:center;justify-content:center;padding:0 13px;border:1px solid #bcd3c2;border-radius:7px;background:#fff;color:var(--green);font-size:10px;font-weight:700;cursor:pointer}.extra-fields{margin-top:16px}.repeat-list{display:flex;flex-direction:column;gap:10px}.repeat-item{padding:13px;border:1px solid #e4ece6;border-radius:10px;background:#fbfdfb}.repeat-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.repeat-head strong{font:700 10px 'Plus Jakarta Sans',sans-serif;color:#4e6558}.remove-row{width:25px;height:25px;border:1px solid #f0d9d2;border-radius:7px;background:#fff8f6;color:#b76552;font-size:16px;line-height:1;cursor:pointer}.repeat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 10px}.repeat-field{display:flex;flex-direction:column;gap:5px;min-width:0}.repeat-field.full{grid-column:1/-1}.repeat-field label{font-size:8px;color:#6d7c73}.repeat-field input,.repeat-field select{height:34px;padding:0 8px;font-size:9px}.add-button{margin-top:12px;min-height:34px;padding:0 12px;border:1px solid #cfe0d3;border-radius:8px;background:#f7fbf7;color:#337354;font-size:9px;font-weight:800;cursor:pointer}.add-button:hover{background:#ecf5ed}.add-button:disabled{opacity:.45;cursor:not-allowed}.form-actions{display:flex;gap:10px;margin-top:18px}.reset-button,.download-button{min-height:47px;padding:0 17px;border-radius:9px;font:700 10px 'Plus Jakarta Sans',sans-serif;cursor:pointer}.reset-button{border:1px solid #dce6df;background:#fff;color:#718078}.download-button{flex:1;border:1px solid var(--green);background:var(--green);color:#fff;box-shadow:0 7px 17px rgba(23,73,63,.14)}.download-button:hover{background:var(--green-dark)}.download-button:disabled{opacity:.6;cursor:wait}.download-button span{margin-right:7px;font-size:16px}.status-message{min-height:18px;margin:9px 2px 0;color:#417b5d;font-size:9px;line-height:1.5}.preview-sticky{position:sticky;top:15px}.preview-heading{margin-bottom:12px}.preview-heading h2{font-size:22px}.live-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid #d8e8da;border-radius:30px;background:#f1f8f1;color:#4c8965;font-size:8px;font-weight:800;letter-spacing:1px}.preview-help{margin-bottom:10px;color:#839189;font-size:9px;line-height:1.5}.sheet-scroll{overflow:auto;padding:3px 3px 10px}.cv-paper{min-width:520px;background:#fff;border:1px solid #d5ded7;box-shadow:var(--shadow);padding:9px;color:#202b25;font-family:'Yu Mincho','MS Mincho',serif;font-size:7px}.cv-top{display:grid;grid-template-columns:1fr 27%;border-bottom:1px solid #505a53}.cv-title{display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;letter-spacing:6px;min-height:28px}.cv-number{display:grid;grid-template-rows:1fr 1fr;border-left:1px solid #59635c}.cv-number div{display:flex;align-items:center;justify-content:center;border-bottom:1px solid #b2bcb4;font-size:7px}.cv-number div:last-child{border:0}.cv-table{width:100%;border-collapse:collapse;table-layout:fixed}.cv-table td,.cv-table th{border:1px solid #757f78;padding:4px 3px;vertical-align:middle;overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.35}.cv-label{width:15%;background:#e3efdc;text-align:center;font-weight:700}.cv-value{background:#fff}.cv-sub-label{background:#e3efdc;text-align:center;font-weight:700}.cv-photo{width:22%;height:112px;padding:0!important;text-align:center;color:#8b9c91;background:#fff}.cv-photo img{width:100%;height:112px;display:block;object-fit:cover}.cv-photo .photo-placeholder-small{display:flex;height:112px;align-items:center;justify-content:center;flex-direction:column;font-size:10px}.cv-section{margin-top:4px;background:#e3efdc;text-align:center;font-weight:700;padding:5px 3px;border:1px solid #757f78}.cv-header{background:#e3efdc;font-weight:700;text-align:center}.cv-table .center{text-align:center}.cv-table .small{font-size:6px}.cv-table .multiline{height:30px}.cv-long{min-height:40px;white-space:pre-wrap;overflow-wrap:anywhere}.cv-motivation{min-height:112px;vertical-align:top!important;padding:7px!important;line-height:1.45!important}.preview-legend{display:flex;align-items:center;gap:7px;margin:10px 2px;color:#89978f;font-size:8px}.legend-dot{width:6px;height:6px;border-radius:50%;background:#7ba78b}.guide-card{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:38px;padding:24px 26px;border:1px solid #dce9e0;border-radius:14px;background:linear-gradient(115deg,#edf6ef,#f8fbf9 65%,#eef6f1)}.guide-card h2{margin:0 0 7px;font:800 18px 'Plus Jakarta Sans',sans-serif}.guide-card p:not(.eyebrow){max-width:680px;margin:0;color:#71827a;font-size:10px;line-height:1.6}.guide-list{display:flex;flex-direction:column;gap:9px;min-width:280px;color:#65766d;font-size:9px}.guide-list b{margin-right:8px;color:var(--green)}.footer{padding:24px 0 5px;text-align:center;color:#9aa79f;font-size:9px}.footer span{padding:0 5px;color:#c6d0c9}.toast{position:fixed;z-index:20;right:20px;bottom:20px;max-width:min(420px,90vw);padding:11px 15px;border-radius:9px;background:#173f35;color:white;box-shadow:0 10px 30px #0002;font-size:10px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1080px){.main-grid{grid-template-columns:minmax(0,1fr) minmax(350px,.9fr);gap:18px}.form-card{padding:19px}.preview-sticky{top:10px}}
+@media(max-width:850px){.page{width:min(700px,92vw);padding-top:30px}.main-grid{grid-template-columns:1fr}.preview-column{grid-row:2}.preview-sticky{position:static}.sheet-scroll{background:#eef3ef;border:1px solid #e2eae5;border-radius:10px}.cv-paper{max-width:720px;margin:auto}.guide-card{align-items:flex-start;flex-direction:column;gap:20px}.guide-list{min-width:0}}
+@media(max-width:560px){.topbar{height:65px;padding:0 4vw}.privacy{font-size:0}.privacy i{width:8px;height:8px}.topbar-actions{gap:14px}.page{width:92vw;padding-top:25px}.hero{margin-bottom:25px}.hero h1{font-size:27px;max-width:300px}.hero-description{font-size:11px}.hero-mark{width:70px;height:70px;border-radius:12px}.hero-mark strong{font-size:17px}.hero-mark small{font-size:5px}.hero-points{gap:9px 13px;font-size:8px}.section-title h2{font-size:19px}.required-info{font-size:8px}.form-card{padding:16px 13px;border-radius:12px}.card-title{gap:9px}.card-symbol{width:33px;height:33px}.card-title h3{font-size:12px}.card-title p{font-size:8px}.fields.two{grid-template-columns:1fr;gap:12px}.field.full{grid-column:auto}.repeat-grid{grid-template-columns:1fr 1fr;gap:8px}.repeat-field.full{grid-column:1/-1}.repeat-item{padding:10px}.form-actions{flex-direction:column-reverse}.reset-button,.download-button{min-height:43px}.preview-heading{margin-bottom:8px}.guide-card{padding:18px}.cv-paper{min-width:510px}.sheet-scroll{margin:0 -5px}}
+
+/* ==========================================
+   RESPONSIVE FINAL - RIREKISHO CV GENERATOR
+   ========================================== */
+
+/* Tablet dan layar menengah */
+@media (max-width: 850px) {
+    .page {
+        width: min(700px, 94%);
+        padding-top: 28px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .preview-column {
+        grid-row: 2;
+        min-width: 0;
+    }
+
+    .preview-sticky {
+        position: static;
+    }
+
+    .guide-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .guide-list {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .sheet-scroll {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cv-paper {
+        width: 520px;
+        min-width: 520px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Smartphone */
+@media (max-width: 560px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    /* HEADER */
+    .topbar {
+        height: 62px;
+        padding: 0 14px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-mark {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+        border-radius: 9px;
+    }
+
+    .brand-name strong {
+        font-size: 12px;
+    }
+
+    .brand-name small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .topbar-actions {
+        gap: 12px;
+    }
+
+    .privacy {
+        font-size: 0;
+        gap: 0;
+    }
+
+    .privacy i {
+        width: 8px;
+        height: 8px;
+    }
+
+    .guide-link {
+        font-size: 10px;
+    }
+
+    /* HALAMAN */
+    .page {
+        width: 94%;
+        padding: 23px 0 15px;
+    }
+
+    /* HERO */
+    .hero {
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .hero > div:first-child {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: 25px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        margin: 10px 0 14px;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .hero-points {
+        gap: 8px 12px;
+        font-size: 8px;
+    }
+
+    .hero-mark {
+        width: 65px;
+        height: 65px;
+        flex: 0 0 65px;
+        border-radius: 10px;
+    }
+
+    .hero-mark strong {
+        font-size: 15px;
+    }
+
+    .hero-mark small {
+        margin-top: 4px;
+        font-size: 5px;
+        letter-spacing: 1px;
+    }
+
+    /* JUDUL SECTION */
+    .section-title {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .section-title h2 {
+        font-size: 18px;
+    }
+
+    .step {
+        font-size: 7px;
+    }
+
+    .required-info {
+        font-size: 8px;
+        text-align: right;
+    }
+
+    /* FORM CARD */
+    .form-card {
+        padding: 15px 12px;
+        margin-bottom: 12px;
+        border-radius: 11px;
+    }
+
+    .card-title {
+        gap: 9px;
+        margin-bottom: 15px;
+    }
+
+    .card-symbol {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    .card-title h3 {
+        font-size: 12px;
+    }
+
+    .card-title p {
+        font-size: 8px;
+    }
+
+    /* INPUT FORM */
+    .fields {
+        gap: 12px;
+    }
+
+    .fields.two {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .field,
+    .field.full {
+        width: 100%;
+        grid-column: auto;
+    }
+
+    .field label {
+        font-size: 10px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea,
+    .repeat-field input,
+    .repeat-field select,
+    .repeat-field textarea {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .field input,
+    .field select,
+    .repeat-field input,
+    .repeat-field select {
+        height: 43px;
+        padding: 0 11px;
+    }
+
+    .field textarea,
+    .repeat-field textarea {
+        min-height: 80px;
+        padding: 10px;
+    }
+
+    .hint {
+        font-size: 8px;
+    }
+
+    .calculated-value {
+        height: 43px;
+    }
+
+    /* FOTO */
+    .photo-row {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .photo-preview {
+        width: 70px;
+        height: 94px;
+    }
+
+    .photo-actions {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .photo-actions p {
+        font-size: 8px;
+    }
+
+    .upload-button {
+        min-height: 38px;
+        font-size: 9px;
+    }
+
+    /* DATA BERULANG */
+    .repeat-list {
+        gap: 9px;
+    }
+
+    .repeat-item {
+        padding: 10px;
+    }
+
+    .repeat-head strong {
+        font-size: 9px;
+    }
+
+    .repeat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px 8px;
+    }
+
+    .repeat-field {
+        min-width: 0;
+    }
+
+    .repeat-field.full {
+        grid-column: 1 / -1;
+    }
+
+    .repeat-field label {
+        font-size: 8px;
+        line-height: 1.4;
+    }
+
+    .repeat-field input,
+    .repeat-field select {
+        height: 39px;
+        padding: 0 7px;
+        font-size: 12px;
+    }
+
+    .remove-row {
+        width: 28px;
+        height: 28px;
+    }
+
+    .add-button {
+        min-height: 39px;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    /* TOMBOL FORM */
+    .form-actions {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 9px;
+        margin-top: 15px;
+    }
+
+    .reset-button,
+    .download-button {
+        width: 100%;
+        min-height: 46px;
+        font-size: 11px;
+    }
+
+    .status-message {
+        font-size: 9px;
+    }
+
+    /* PREVIEW CV */
+    .preview-heading h2 {
+        font-size: 19px;
+    }
+
+    .preview-help {
+        font-size: 9px;
+    }
+
+    .live-pill {
+        font-size: 7px;
+        padding: 5px 8px;
+    }
+
+    .sheet-scroll {
+        width: 100%;
+        margin: 0;
+        padding: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        background: #edf2ee;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cv-paper {
+        width: 520px;
+        min-width: 520px;
+        max-width: none;
+        margin: 0;
+        padding: 9px;
+    }
+
+    .preview-legend {
+        font-size: 8px;
+        line-height: 1.5;
+    }
+
+    /* PANDUAN */
+    .guide-card {
+        margin-top: 25px;
+        padding: 16px 13px;
+        border-radius: 11px;
+    }
+
+    .guide-card h2 {
+        font-size: 16px;
+    }
+
+    .guide-card p:not(.eyebrow) {
+        font-size: 9px;
+    }
+
+    .guide-list {
+        gap: 10px;
+        font-size: 9px;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 20px 5px 8px;
+        font-size: 8px;
+        line-height: 1.7;
+    }
+
+    /* NOTIFIKASI */
+    .toast {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+        max-width: none;
+        font-size: 10px;
+        padding: 12px;
+    }
+
+    /* AREA SENTUH */
+    button,
+    a,
+    select,
+    input {
+        touch-action: manipulation;
+    }
+
+    button {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* GAMBAR */
+    img {
+        max-width: 100%;
+    }
+}
+
+
+/* Smartphone layar kecil */
+@media (max-width: 360px) {
+
+    .page {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero-mark {
+        width: 55px;
+        height: 55px;
+        flex-basis: 55px;
+    }
+
+    .form-card {
+        padding: 12px 10px;
+    }
+
+    .repeat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .repeat-field.full {
+        grid-column: auto;
+    }
+
+    .photo-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .photo-actions {
+        width: 100%;
+    }
+
+    .photo-actions p {
+        max-width: none;
+    }
+}

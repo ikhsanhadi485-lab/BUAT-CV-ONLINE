@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#143d35" />
+  <meta name="description" content="Buat CV Jepang berdasarkan format Rirekisho bilingual Jepang-Indonesia. Semua data diproses di browser." />
+  <title>Rirekisho CV Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Rirekisho CV Generator">
+      <span class="brand-mark">履</span>
+      <span class="brand-name"><strong>Rirekisho CV</strong><small>JAPANESE RESUME GENERATOR</small></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="privacy"><i></i> Data diproses di browser</span>
+      <a href="#panduan" class="guide-link">Panduan</a>
+    </div>
+  </header>
+
+  <main id="top" class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">JAPANESE CV BUILDER</p>
+        <h1>Buat CV Jepang sesuai format contoh.</h1>
+        <p class="hero-description">Isi data pribadi, pendidikan, pekerjaan, sertifikat, dan keluarga. Sistem akan memasukkan semuanya ke dalam lembar Excel dengan susunan yang mengikuti dokumen contoh.</p>
+        <div class="hero-points">
+          <span><b>01</b> Isi formulir</span><span><b>02</b> Periksa pratinjau</span><span><b>03</b> Unduh Excel</span>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true"><strong>履歴書</strong><small>CV FORMAT<br />JAPAN</small></div>
+    </section>
+
+    <div class="main-grid">
+      <section class="editor">
+        <div class="section-title">
+          <div><span class="step">01 / FORMULIR</span><h2>Data untuk CV</h2></div>
+          <span class="required-info"><i></i> Isi sesuai data sebenarnya</span>
+        </div>
+
+        <form id="cvForm" autocomplete="on">
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">人</span><div><h3>Identitas pribadi</h3><p>Data utama yang ditampilkan di bagian atas CV.</p></div></div>
+            <div class="fields two">
+              <div class="field full">
+                <label for="fullName">Nama lengkap (Romaji) <em>*</em></label>
+                <input id="fullName" data-field="fullName" type="text" placeholder="Contoh: IKHSAN HADI NUGRAHA" required />
+              </div>
+              <div class="field full">
+                <div class="label-line"><label for="furigana">Furigana / Katakana</label><button class="link-button" type="button" id="generateKana">Buat otomatis</button></div>
+                <input id="furigana" data-field="furigana" type="text" lang="ja" placeholder="Contoh: イクサン・ハディ・ヌグラハ" />
+                <small class="hint">Hasil otomatis hanya saran pelafalan. Koreksi manual bila diperlukan.</small>
+              </div>
+              <div class="field">
+                <label for="birthDate">Tanggal lahir <em>*</em></label>
+                <input id="birthDate" data-field="birthDate" type="date" required />
+              </div>
+              <div class="field">
+                <label>Usia</label>
+                <div class="calculated-value"><strong id="ageValue">—</strong><span>tahun</span><small>Dihitung otomatis</small></div>
+              </div>
+              <div class="field">
+                <label for="gender">Jenis kelamin</label>
+                <select id="gender" data-field="gender"><option value="">Pilih / 選択</option><option value="男性">男性（Laki-laki）</option><option value="女性">女性（Perempuan）</option></select>
+              </div>
+              <div class="field">
+                <label for="maritalStatus">Status pernikahan</label>
+                <select id="maritalStatus" data-field="maritalStatus"><option value="無">Belum menikah</option><option value="有">Menikah</option></select>
+              </div>
+              <div class="field">
+                <label for="birthPlace">Tempat lahir</label>
+                <input id="birthPlace" data-field="birthPlace" type="text" placeholder="Contoh: MEDAN" />
+              </div>
+              <div class="field">
+                <label for="heightCm">Tinggi badan (cm)</label>
+                <input id="heightCm" data-field="heightCm" type="number" min="50" max="250" placeholder="170" />
+              </div>
+              <div class="field">
+                <label for="weightKg">Berat badan (kg)</label>
+                <input id="weightKg" data-field="weightKg" type="number" min="10" max="300" placeholder="60" />
+              </div>
+              <div class="field">
+                <label for="tokuteiMonths">Sisa masa kerja Tokutei Ginou (bulan)</label>
+                <input id="tokuteiMonths" data-field="tokuteiMonths" type="number" min="0" step="1" inputmode="numeric" placeholder="Contoh: 36" />
+                <small class="hint">Masukkan jumlah bulan yang masih tersisa, misalnya 36 untuk 3 tahun.</small>
+              </div>
+              <div class="field full">
+                <label for="address">Alamat lengkap <em>*</em></label>
+                <textarea id="address" data-field="address" rows="2" placeholder="Alamat, kecamatan, kota/kabupaten, provinsi, negara" required></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">写</span><div><h3>Foto dan informasi tambahan</h3><p>Foto akan dimasukkan ke kotak foto di bagian kanan atas dokumen.</p></div></div>
+            <div class="photo-row">
+              <div id="photoPreview" class="photo-preview"><span>写真</span><small>Foto 3 × 4</small></div>
+              <div class="photo-actions">
+                <label for="photoInput" class="upload-button">＋ Pilih foto</label>
+                <input id="photoInput" type="file" accept="image/png,image/jpeg,.jpg,.jpeg,.png" hidden />
+                <p>Format JPG/PNG. Foto akan dipotong ke rasio potret 3:4 secara otomatis.</p>
+                <button id="removePhoto" type="button" class="link-button" hidden>Hapus foto</button>
+              </div>
+            </div>
+            <div class="fields two extra-fields">
+              <div class="field full"><label for="hobby">Hobi / keahlian</label><textarea id="hobby" data-field="hobby" rows="2" placeholder="Contoh: Membaca, bermain sepak bola, memasak"></textarea></div>
+              <div class="field"><label for="visitedJapan">Pernah ke Jepang?</label><select id="visitedJapan" data-field="visitedJapan"><option value="no">Belum pernah</option><option value="yes">Pernah</option></select></div>
+              <div class="field"><label for="travelPeriod">Kapan / periode perjalanan</label><input id="travelPeriod" data-field="travelPeriod" type="text" placeholder="Contoh: April 2024 – Juni 2024" disabled /></div>
+              <div class="field full"><label for="travelPurpose">Tujuan perjalanan</label><input id="travelPurpose" data-field="travelPurpose" type="text" placeholder="Contoh: Bekerja sebagai peserta magang" disabled /></div>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">学</span><div><h3>Riwayat pendidikan</h3><p>Masukkan maksimal 4 riwayat pendidikan sesuai kapasitas dokumen contoh.</p></div></div>
+            <div id="educationRows" class="repeat-list"></div>
+            <button class="add-button" type="button" data-add="education">＋ Tambah pendidikan</button>
+          </section>
+
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">職</span><div><h3>Riwayat pekerjaan</h3><p>Masukkan maksimal 4 pengalaman kerja. Isi status izin tinggal dan deskripsi pekerjaan.</p></div></div>
+            <div id="workRows" class="repeat-list"></div>
+            <button class="add-button" type="button" data-add="work">＋ Tambah pekerjaan</button>
+          </section>
+
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">免</span><div><h3>Lisensi dan sertifikasi</h3><p>Maksimal 3 sertifikat. Nama sertifikat Jepang bersifat opsional.</p></div></div>
+            <div id="certificateRows" class="repeat-list"></div>
+            <button class="add-button" type="button" data-add="certificate">＋ Tambah sertifikat</button>
+          </section>
+
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">家</span><div><h3>Susunan keluarga</h3><p>Maksimal 6 anggota keluarga sesuai tabel pada dokumen contoh.</p></div></div>
+            <div id="familyRows" class="repeat-list"></div>
+            <button class="add-button" type="button" data-add="family">＋ Tambah anggota keluarga</button>
+          </section>
+
+          <section class="form-card">
+            <div class="card-title"><span class="card-symbol">志</span><div><h3>Motivasi melamar pekerjaan</h3><p>Tuliskan alasan dan tujuan bekerja di Jepang. Gunakan bahasa yang sesuai untuk lamaran kerja.</p></div></div>
+            <div class="field"><label for="motivation">志望動機 / Alasan melamar</label><textarea id="motivation" data-field="motivation" rows="6" placeholder="Tuliskan motivasi, pengalaman relevan, tujuan bekerja, dan rencana pengembangan diri..."></textarea><small class="hint">Bagian ini akan mengisi kotak motivasi di bagian bawah dokumen.</small></div>
+          </section>
+
+          <div class="form-actions">
+            <button type="button" id="resetForm" class="reset-button">Reset formulir</button>
+            <button type="button" id="downloadExcel" class="download-button"><span>↓</span> Unduh CV Excel (.xlsx)</button>
+          </div>
+          <p id="downloadStatus" class="status-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <aside class="preview-column">
+        <div class="preview-sticky">
+          <div class="section-title preview-heading"><div><span class="step">02 / HASIL DOKUMEN</span><h2>Live Preview</h2></div><span class="live-pill"><i></i> LIVE</span></div>
+          <div class="preview-help">Pratinjau mengikuti susunan lembar Excel. Teks dapat terlihat lebih kecil di layar karena dokumen dibuat dalam format A4.</div>
+          <div class="sheet-scroll">
+            <article id="cvPreview" class="cv-paper" aria-label="Pratinjau CV Jepang"></article>
+          </div>
+          <div class="preview-legend"><span class="legend-dot"></span> Pratinjau diperbarui saat formulir diubah.</div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="panduan" class="guide-card">
+      <div><p class="eyebrow">PANDUAN</p><h2>Cara membuat CV</h2><p>Isi formulir dari atas ke bawah, periksa kembali tulisan Katakana dan tanggal, lalu unduh file Excel. Data dan foto tidak dikirim ke server aplikasi.</p></div>
+      <div class="guide-list"><span><b>01</b> Lengkapi identitas dan foto</span><span><b>02</b> Tambahkan riwayat, sertifikat, dan keluarga</span><span><b>03</b> Periksa pratinjau sebelum mengunduh</span></div>
+    </section>
+    <footer class="footer">Rirekisho Generator <span>·</span> Ikhsan Hadi Nugraha </footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
